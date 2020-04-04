@@ -1,0 +1,4 @@
+{
+  /** this path is the output of `pipenv --venv` (using pyenv and pipenv on macos) */
+  "python.pythonPath": "/Users/rob/.local/share/virtualenvs/django_projects-ETRW-zdw"
+}
