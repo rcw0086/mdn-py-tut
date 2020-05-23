@@ -1,4 +1,5 @@
 # Some Important Commands Used in this Tutorial
+`python manage.py runserver`
 
 ## General Startup and Maintenance Commands
 
@@ -7,7 +8,7 @@
   2. mkdir <myproject> && cd <myproject>
   3. `django-admin startproject <myproject>`
 
-### To create and APP inside the django PROJECT
+### To create an APP inside the django PROJECT
   1. `python manage.py startapp <my_app_name>`
   2. add application to list of installed apps in settings.py
   3. import <my_app_name> URLs into the project URLs (e.g. `path('catalog/', include('catalog.urls'))`)
