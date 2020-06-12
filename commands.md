@@ -1,3 +1,6 @@
+# Some Important Environment Info for Python & Django Projects
+`pyenv shell` to get a shell loaded with the project's dependencies (including django)
+
 # Some Important Commands Used in this Tutorial
 `python manage.py runserver`
 
