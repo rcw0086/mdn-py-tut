@@ -8,8 +8,9 @@ def index(request):
     num_books = Book.objects.all().count()
     num_instances = BookInstance.objects.all().count()
 
-    num_books_with_word = Book.objects.filter(title__contains='personal').count()
-    num_genres_with_word = Genre.objects.filter(name__contains='fiction').count()
+    word = 'personal'
+    num_books_with_word = Book.objects.filter(title__contains = word).count()
+    num_genres_with_word = Genre.objects.filter(name__contains = word).count()
 
     # Available books (status = 'a')
     num_instances_available = BookInstance.objects.filter(status__exact='a').count()
@@ -22,6 +23,7 @@ def index(request):
         'num_instances': num_instances,
         'num_instances_available': num_instances_available,
         'num_authors': num_authors,
+        'word': word,
         'num_books_with_word': num_books_with_word,
         'num_genres_with_word': num_genres_with_word
     }

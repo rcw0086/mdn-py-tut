@@ -1,6 +1,14 @@
 from django.contrib import admin
 from .models import Author, Genre, Book, BookInstance, Language
 
+# the @register decorator is equal to: `admin.site.register(Author, AuthorAdmin`
+# list_display = (...) lists what fields to display
+# list_filter = (...) gives you a handy filtering panel on the screen, pre-populated with useful filters
+# fieldsets = (...) allows you to split attributes for a model into different sections on the screen, with section headings
+# fields = [] string-names of fields to show. To group inline, use a tuple ('', '')
+# exclude = [] string names of fields to exclude
+# inlines = [] class names of objects to include inline
+
 # Register your models here.
 admin.site.register(Genre)
 admin.site.register(Language)

@@ -1,7 +1,7 @@
 {% extends "base_generic.html" %}
 
 {% block title %}
-<title>Local Library Catalog</title>
+<title>Local Library: Catalog</title>
 {% endblock %}
 
 {% block content %}
@@ -16,5 +16,7 @@
     <li><strong>Authors:</strong> {{ num_authors }}</li>
     <li><strong>Books with Word:</strong> {{ num_books_with_word }}</li>
     <li><strong>Genres with Word:</strong> {{ num_genres_with_word }}</li>
+    <br />
+    <li><strong>Word:</strong> "{{ word }}"</li>
   </ul>
 {% endblock %}
