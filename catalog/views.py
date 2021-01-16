@@ -30,3 +30,29 @@ def index(request):
 
     # Render the HTML template index.html with the data in the context variable
     return render(request, 'index.html', context=context)
+
+# "generic, class-based views" - seems to be django-speak for "resources" in rails - views based on a model
+from django.views import generic
+class BookListView(generic.ListView):
+    model = Book
+    # context_object_name = 'my_book_list'   # your own name for the list as a template variable
+    # queryset = Book.objects.filter(title__icontains='war')[:5] # Get 5 books containing the title war
+    # template_name = 'books/my_arbitrary_template_name_list.html'  # Specify your own template name/location
+
+    # You can also override class methods such as `get_queryset(self):`to control what is returned
+    # Overriding get_context_data() allows you to pass custom variables to the template
+
+
+    # this class replaces the following function-based view
+    # def book_detail_view(request, primary_key):
+    #     try:
+    #         book = Book.objects.get(pk=primary_key)
+    #     except Book.DoesNotExist:
+    #         raise Http404('Book does not exist')
+    #     (THE ABOVE CAN BE WRITTEN AS:) book = get_object_or_404(Book, pk=primary_key)
+
+    #     return render(request, 'catalog/book_detail.html', context={'book': book})
+
+
+class BookDetailView(generic.DetailView):
+    model = Book
