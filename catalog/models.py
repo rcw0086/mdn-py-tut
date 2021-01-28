@@ -89,6 +89,10 @@ class BookInstance(models.Model):
 
     class Meta:
         ordering = ['due_back']
+        permissions = (("can_mark_returned", "Set book as returned"),)
+        # `perms` var available in templates, boolean
+        # @permission_required('catalog.can_mark_returned', raise_exception=True) <- use for function-based views
+        # class MyView(PermissionRequiredMixin, View) <- use for class-based views
 
     def __str__(self):
         """String for representing the Model object."""
